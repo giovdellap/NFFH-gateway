@@ -1,17 +1,17 @@
-FROM eclipse-temurin:17-jdk-jammy as builder
+FR
+
+FROM MAVEN:3.6.3 AS maven
+
 WORKDIR /opt/app
-RUN chmod +x mvnw &&
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
+ 
+COPY mvnw mvnw.cmd pom.xml ./
+
 COPY ./src ./src
-RUN ./mvnw clean install
-
-
-
+RUN ./mvnw clean package
 
 
  
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:17-jre-jammy as builder
 WORKDIR /opt/app
 EXPOSE 8080
 COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
