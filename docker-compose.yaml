@@ -1,0 +1,6 @@
+services:
+  api-getaway:
+    build:
+      dockerfile: ./Dockerfile
+      args:
+        APP_NAME: api-getaway
