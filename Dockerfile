@@ -1,18 +1,5 @@
-FROM eclipse-temurin:17-jdk-jammy as builder
-WORKDIR /opt/app
-RUN chmod +x mvnw &&
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY ./src ./src
-RUN ./mvnw clean install
+FROM openjdk:17
 
+COPY target/apigateway-0.0.1-SNAPSHOT.jar apigateway-0.0.1-SNAPSHOT.jar 
 
-
-
-
- 
-FROM eclipse-temurin:17-jre-jammy
-WORKDIR /opt/app
-EXPOSE 8080
-COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
-ENTRYPOINT ["java", "-jar", "/opt/app/*.jar" ]
+ENTRYPOINT [ "java", "-jar", "apigateway-0.0.1-SNAPSHOT.jar" ]

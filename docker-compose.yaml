@@ -4,3 +4,5 @@ services:
       dockerfile: ./Dockerfile
       args:
         APP_NAME: api-getaway
+    ports:
+      - "8080:8080"
