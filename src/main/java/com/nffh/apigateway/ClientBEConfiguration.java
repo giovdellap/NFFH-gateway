@@ -21,7 +21,7 @@ public class ClientBEConfiguration {
     @Bean
     public RouteLocator clientBELocator(RouteLocatorBuilder builder) {
 
-        String clientBEurl = this.url+":"+this.port;
+        String clientBEurl = this.url;
         return builder.routes()
             // ADMIN
             .route("getProfile", r -> r.path("/admin/client")

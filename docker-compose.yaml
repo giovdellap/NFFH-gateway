@@ -1,15 +1,13 @@
 services:
-  api-getaway:
+  api-gateway:
     build:
       dockerfile: ./Dockerfile
-      args:
-        APP_NAME: api-getaway
     ports:
-      - "8080:8080"
+      - "8080:80"
+      
     networks:
       - client-be
 
 networks:
   client-be:
-    external: true
     name: client-be
