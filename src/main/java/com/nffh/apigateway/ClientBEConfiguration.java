@@ -15,7 +15,7 @@ public class ClientBEConfiguration {
     @Value("${clientBE.port}")
     private String port;
 
-    @Value("{genericFE.url}")
+    @Value("${genericFE.url}")
     private String genericFE;
 
     @Bean
@@ -27,6 +27,8 @@ public class ClientBEConfiguration {
             .route("getProfile", r -> r.path("/admin/client")
                 .uri(clientBEurl))
             .route("search", r -> r.path("/admin/client")
+                .uri(clientBEurl))
+            .route("search", r -> r.path("/customer")
                 .uri(clientBEurl))
             
         .build();
