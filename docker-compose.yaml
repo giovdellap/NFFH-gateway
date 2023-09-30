@@ -6,3 +6,10 @@ services:
         APP_NAME: api-getaway
     ports:
       - "8080:8080"
+    networks:
+      - client-be
+
+networks:
+  client-be:
+    external: true
+    name: client-be
