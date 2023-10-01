@@ -1,6 +1,12 @@
-FROM openjdk:17
+FROM node:18.18.0
 
-COPY target/apigateway-0.0.1-SNAPSHOT.jar apigateway-0.0.1-SNAPSHOT.jar 
+WORKDIR /code
 
-ENTRYPOINT [ "java", "-jar", "apigateway-0.0.1-SNAPSHOT.jar" ]
-EXPOSE 8080
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+RUN npm install
+
+COPY . .
+
+CMD ["node", "index.js"]
