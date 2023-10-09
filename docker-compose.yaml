@@ -6,7 +6,11 @@ services:
       - 8080:8080
     networks:
       - client-be
+      - auth
+
 
 networks:
   client-be:
     name: client-be
+  auth:
+    name: auth
