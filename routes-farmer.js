@@ -26,6 +26,19 @@ const ROUTES_FARMER = [
         }
     },
     {
+        url: '/product',
+        auth: false,
+        creditCheck: false,
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: {
+            target: "http://farmer-be:9703",
+            changeOrigin: false
+        }
+    },
+    {
         url: '/allproducts',
         auth: false,
         creditCheck: false,
