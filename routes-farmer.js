@@ -77,6 +77,32 @@ const ROUTES_FARMER = [
             changeOrigin: false
         }
     },
+    {
+        url: '/farmerFull',
+        auth: false,
+        creditCheck: false,
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: {
+            target: "http://farmer-be:9703",
+            changeOrigin: false
+        }
+    },
+    {
+        url: '/farmerLight',
+        auth: false,
+        creditCheck: false,
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: {
+            target: "http://farmer-be:9703",
+            changeOrigin: false
+        }
+    },
 ]
 
 exports.ROUTES_FARMER = ROUTES_FARMER;

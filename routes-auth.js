@@ -26,7 +26,7 @@ const ROUTES_AUTH = [
         }
     },
     {
-        url: '/farmer/login',
+        url: '/login',
         auth: false,
         creditCheck: false,
         rateLimit: {
@@ -52,7 +52,20 @@ const ROUTES_AUTH = [
         }
     },
     {
-        url: '/farmer/signup',
+        url: '/signup',
+        auth: false,
+        creditCheck: false,
+        rateLimit: {
+            windowMs: 15 * 60 * 1000,
+            max: 5
+        },
+        proxy: {
+            target: "http://auth:9701",
+            changeOrigin: false
+        }
+    },
+    {
+        url: '/verifyToken',
         auth: false,
         creditCheck: false,
         rateLimit: {
