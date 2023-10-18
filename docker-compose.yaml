@@ -12,8 +12,8 @@ services:
 
 networks:
   client-be:
-    name: client-be
+    name: g-client-be
   auth:
-    name: auth
+    name: g-auth
   farmer-be:
-    name: farmer-be
+    name: g-farmer-be
