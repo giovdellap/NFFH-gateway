@@ -26,7 +26,7 @@ const ROUTES_AUTH = [
         }
     },
     {
-        url: '/login',
+        url: '/farmer/login',
         auth: false,
         creditCheck: false,
         rateLimit: {
@@ -52,7 +52,7 @@ const ROUTES_AUTH = [
         }
     },
     {
-        url: '/signup',
+        url: '/farmer/signup',
         auth: false,
         creditCheck: false,
         rateLimit: {
