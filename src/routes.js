@@ -19,10 +19,14 @@ export const ROUTES_CLIENT = [
 ]
 
 export const ROUTES_AUTH = [
-    '/verify',
     '/client/login',
     '/farmer/login',
     '/client/signup',
     'farmer/signup',
-    '/verifyToken'
+    '/admin/login'
+]
+
+export const DEBUG_AUTH = [
+    '/verifyToken',
+    '/verify',
 ]

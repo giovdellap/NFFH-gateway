@@ -1,6 +1,6 @@
 import express from 'express';
 
-import {ROUTES_AUTH, ROUTES_CLIENT, ROUTES_FARMER, ROUTES_IMAGE} from "./routes.js";
+import {DEBUG_AUTH, ROUTES_AUTH, ROUTES_CLIENT, ROUTES_FARMER, ROUTES_IMAGE} from "./routes.js";
 
 import {setupProxies} from "./proxy.js";
 import {default as RoutesBuilder} from './RoutesBuilder.js';
@@ -12,8 +12,9 @@ const builder = new RoutesBuilder()
 
 builder.addRoutes(ROUTES_AUTH, AUTH);
 builder.addRoutes(ROUTES_CLIENT, CLIENT_BE);
-builder.addRoutes(ROUTES_FARMER, FARMER_BE)
-builder.addRoutes(ROUTES_IMAGE, IMAGE)
+builder.addRoutes(ROUTES_FARMER, FARMER_BE);
+builder.addRoutes(ROUTES_IMAGE, IMAGE);
+builder.addRoutes(DEBUG_AUTH, AUTH);
 
 setupProxies(app, builder.exposeRoutes());
 
