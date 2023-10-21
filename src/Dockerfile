@@ -1,4 +1,4 @@
-FROM node:18.18.0
+FROM node:18.18-alpine3.18
 
 WORKDIR /code
 
@@ -9,4 +9,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]
