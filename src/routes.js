@@ -2,7 +2,7 @@ export const ROUTES_AUTH = [
     '/client/login',
     '/farmer/login',
     '/client/signup',
-    'farmer/signup',
+    '/farmer/signup',
     '/admin/login'
 ]
 

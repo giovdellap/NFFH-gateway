@@ -26,4 +26,3 @@ export default class RoutesBuilder {
         return this.routes;
     }
 }
-
