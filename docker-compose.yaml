@@ -12,11 +12,13 @@ services:
 
 
 networks:
-  client-be:
-    name: g-client-be
   auth:
     name: g-auth
+  client-be:
+    name: g-client-be
   farmer-be:
     name: g-farmer-be
+  order-be:
+    name: g-order-be  
   image:
     name: g-images
