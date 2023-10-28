@@ -16,7 +16,7 @@ export const ROUTES_FARMER = [
 ]
 
 export const ROUTES_CLIENT = [
-    '/customer',
+    '/client',
     '/provaclient'
 ]
 
