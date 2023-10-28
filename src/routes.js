@@ -20,6 +20,10 @@ export const ROUTES_CLIENT = [
     '/provaclient'
 ]
 
+export const ROUTES_ORDER = [
+    '/order'
+]
+
 export const ROUTES_IMAGE = [
     '/images'
 ]
